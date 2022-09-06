@@ -1,0 +1,144 @@
+body{
+    font-family: 'Roboto', sans-serif;
+   background-color: white;
+}
+
+
+.navbar {
+    background-color: rgba(255, 230, 0, 0.842);
+    z-index: 1000;
+}
+
+.nav-item{
+    color: #000;
+    font-size: large;
+}
+
+img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#boton-carrito {
+    font-size: 1.5rem;
+}
+
+#boton-carrito:focus {
+    outline: none;
+}
+
+
+.producto {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
+    max-width: 14rem;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+   background-color: white;
+}
+
+.boton-agregar {
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    border: none;
+}
+
+.boton-modal:hover{
+    background-color: white;
+
+}
+
+.boton-modal{
+    background-color: rgba(255, 230, 0, 0.719);
+
+}
+
+.modal-contenedor {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.modal-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-carrito {
+    position: relative;
+    background-color: white;
+    min-width: 500px;
+    padding: 20px;
+    margin-top: -100%;
+    transition: all .5s;
+}
+
+.modal-active {
+    margin-top: 0;
+}
+
+.modal-carrito #carritoCerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: black;
+    border: none;
+    background-color: white;
+}
+
+.modal-carrito #carritoCerrar:hover {
+    cursor: pointer;
+}
+
+.modal-carrito #carritoCerrar:focus {
+    outline: none;
+}
+
+.productoEnCarrito {
+
+    margin: 5px 0;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.productoEnCarrito:hover {
+    background-color: antiquewhite;
+}
+
+.boton-eliminar {
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 20px;
+}
+
+.boton-eliminar:hover {
+    cursor: pointer;
+}
+
+.boton-eliminar:focus {
+    outline: none;
+}
+
+.nombres {
+    font-family: "aboreto", sans-serif;
+    border: 1px solid black;
+    list-style: none;
+}
+
+.nombresHover:hover{
+    background-color: #000;
+    color: aliceblue;
+    transition: 0.6s;
+}
+
+ul {
+    list-style: none;
+}
