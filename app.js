@@ -22,7 +22,40 @@ fetch("./stock.json")
         `
         contenedorProductos.appendChild(div)
 
+            const boton = document.getElementById(`agregar${producto.id}`)
+    boton.addEventListener('click', () => {
+       
+        agregarAlCarrito(producto.id)
+        setTimeout(()=>{
+            Swal.fire({
+                icon: 'success',
+                title: 'El producto fue añadido correctamente'
+               
+              })
+        },300);     
+    })
+    const agregarAlCarrito = (prodId) => {
+
+        const carrillo = carrito.some (prod => prod.id === prodId) 
+        if (carrillo){ 
+            const prod = carrito.map (prod => { 
+                if (prod.id === prodId){
+                    prod.cantidad++
+                }
+            })
+        } else { 
+            const item = stockProductos.find((prod) => prod.id === prodId)
+            carrito.push(item)
+        }
+        
+        actualizarCarrito() 
+    }
+    
+    })
+    
 })
+
+
 
 
 
@@ -50,37 +83,7 @@ botonVaciar.addEventListener('click', () => {
 
 
     
-    const boton = document.getElementById(`agregar${producto.id}`)
-    boton.addEventListener('click', () => {
-       
-        agregarAlCarrito(producto.id)
-        setTimeout(()=>{
-            Swal.fire({
-                icon: 'success',
-                title: 'El producto fue añadido correctamente'
-               
-              })
-        },300);     
-    })
-})
 
-
-const agregarAlCarrito = (prodId) => {
-
-    const carrillo = carrito.some (prod => prod.id === prodId) 
-    if (carrillo){ 
-        const prod = carrito.map (prod => { 
-            if (prod.id === prodId){
-                prod.cantidad++
-            }
-        })
-    } else { 
-        const item = stockProductos.find((prod) => prod.id === prodId)
-        carrito.push(item)
-    }
-    
-    actualizarCarrito() 
-}
 
 const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
